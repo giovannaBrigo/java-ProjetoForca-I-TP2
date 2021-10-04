@@ -4,17 +4,31 @@ public class Palavra implements Comparable<Palavra>
 
     public Palavra (String texto) throws Exception
     {
-		// verifica se o texto recebido é nulo ou então vazio,
-		// ou seja, sem nenhum caractere, lançando exceção.
-		// armazena o texto recebido em this.texto.
+    	// verifica se o texto recebido é nulo ou então vazio,
+	// ou seja, sem nenhum caractere, lançando exceção.
+	// armazena o texto recebido em this.texto.	
+	if (texto == null || texto == "")
+		throw Exception ("Palavra inválida!");
+			
+	this.texto = texto;
     }
 
     public int getQuantidade (char letra)
     {
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
+	
+        int qtdLetras;
+        
+        for (int i = 0; i < this.texto.length(); i++)
+        {
+		if (this.texto[i] == letra)
+			qtdLetras++;
+	}
+		
+	return qtdLetras;
     }
-
+    
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
     {
         // se i==0, retorna a posicao em que ocorre a primeira
