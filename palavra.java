@@ -4,31 +4,32 @@ public class Palavra implements Comparable<Palavra>
 
     public Palavra (String texto) throws Exception
     {
-    	// verifica se o texto recebido é nulo ou então vazio,
-	// ou seja, sem nenhum caractere, lançando exceção.
-	// armazena o texto recebido em this.texto.	
-	if (texto == null || texto == "")
-		throw Exception ("Palavra inválida!");
+		// verifica se o texto recebido é nulo ou então vazio,
+		// ou seja, sem nenhum caractere, lançando exceção.
+		// armazena o texto recebido em this.texto.
+		
+		if (texto == null || texto == "")
+			throw new Exception ("Palavra inválida!");
 			
-	this.texto = texto;
+		this.texto = texto;
     }
 
     public int getQuantidade (char letra)
     {
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
-	
-        int qtdLetras;
+        
+        int qtdLetras = 0;
         
         for (int i = 0; i < this.texto.length(); i++)
         {
-		if (this.texto[i] == letra)
-			qtdLetras++;
-	}
+			if (this.texto.charAt(i) == letra)
+				qtdLetras++;
+		}
 		
-	return qtdLetras;
+		return qtdLetras;
     }
-    
+
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
     {
         // se i==0, retorna a posicao em que ocorre a primeira
@@ -40,6 +41,24 @@ public class Palavra implements Comparable<Palavra>
         // e assim por diante.
         // lançar excecao caso nao encontre em this.texto
         // a Iézima aparição da letra fornecida.
+        
+        int aparicao = -1; // guarda as vezes que a letra apareceu
+        int posicao  = -1; // guarda a posicao do caractere em this.texto
+        
+        for (int c = 0; c < this.texto.length(); c++)
+        {
+			if (this.texto.charAt(c) == letra)
+			{
+				aparicao = aparicao + 1;
+				if (aparicao == i)
+					posicao = c;
+			}	
+		}
+        
+        if (posicao == -1) // se não houver alterações, a letra não existe na palavra
+			throw new Exception ("A letra '" + letra + "' não ocorre na palavra!");
+        
+        return posicao;
     }
 
     public int getTamanho ()
@@ -56,6 +75,19 @@ public class Palavra implements Comparable<Palavra>
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        
+        if (obj == null) return false;
+			
+		if (this == obj) return true;
+        
+        if (obj.getClass() != Palavra.class) return false;
+        
+        Palavra p = (Palavra) obj; // revelação, pois temos certeza de que é uma Palavra
+        
+        if (p.texto != this.texto)
+			return false;
+			
+		return true;			
     }
 
     public int hashCode ()
