@@ -42,12 +42,32 @@ public class Tracinhos implements Cloneable
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        
+        int ret = 5;
+        
+        if (this.texto != null) // ?????? -> seria impossível ele ser nulo?
+								// se é possível, retornaria ret?
+			ret = 5 * ret + (this.texto).hashCode();
+        
+        if (ret < 0) ret = - ret;
+        
+        return ret;
     }
 
     public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
     {
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
-        // e copilar o conteúdo de t.texto para this.texto
+        // e copiar o conteúdo de t.texto para this.texto
+        
+        if (t == null)
+			throw new Exception ("O objeto passado como parâmetro não foi instanciado.");
+        
+        this.texto = new char[t.texto.length];
+        
+        for (int i = 0; i < t.texto.length - 1; i++)
+        {
+			this.texto[i] = t.texto[i];
+		}
     }
 
     public Object clone ()
