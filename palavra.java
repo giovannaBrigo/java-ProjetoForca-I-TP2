@@ -89,10 +89,21 @@ public class Palavra implements Comparable<Palavra>
 			
 		return true;			
     }
-
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        
+        // int ret = super.hashcode(); g--> se a classe estiver herdando(n consegui sacar se s ou null
+        // int ret = 75; g--> se não estiver herdando
+        
+        // g--> se for um objeto 
+        // if(this.dia!= null) g--> testamos se o objeto é null(mas lá em cima já teve uma verificação)
+        // ret = 13*ret + this.texto.hashCode();
+        // g--> se não for um objeto
+        // ret = 13*ret + new String (this.texto).hashCode();
+        
+        // if(ret<0) ret = -ret --> se for negativo, transformamos em positivo
     }
 
     public int compareTo (Palavra palavra)
@@ -100,3 +111,4 @@ public class Palavra implements Comparable<Palavra>
         return this.texto.compareTo(palavra.texto);
     }
 }
+
