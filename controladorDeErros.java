@@ -4,9 +4,14 @@ public class ControladorDeErros implements Cloneable
 
     public ControladorDeErros (int qtdMax) throws Exception
     {
-		// verifica se qtdMax fornecida não é positiva, lançando
-		// uma exceção.
-		// armazena qtdMax fornecida em this.qtdMax.
+    	// verifica se qtdMax fornecida não é positiva, lançando
+	// uma exceção.
+	// armazena qtdMax fornecida em this.qtdMax.
+		
+	if (qtdMax >= 0)
+		throw new Exception ("Quantidade inválida!");
+		
+	this.qtdMax = qtdMax;
     }
 
     public void registreUmErro () throws Exception
