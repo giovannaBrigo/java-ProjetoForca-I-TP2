@@ -52,10 +52,31 @@ public class ControladorDeErros implements Cloneable
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
+        
+        if (c==null)
+		throw new Exception ("Modelo ausente!");
+		// o que coloca como mensagem da Exception?
+			
+	this.qtdMax = c.qtdMax;
+	this.qtdErr = c.qtdErr;        
     }
 
     public Object clone ()
     {
-        // returnar uma cópia de this
+        // retornar uma cópia de this
+        
+        ControladorDeErros c=null;
+        
+        try
+        {
+		c = new ControladorDeErros(this);
+	}
+        catch (Exception erro)
+        {} // temos certeza que não dará erro, visto
+	   // que estamos passando this como parâmetro
+	   // e this é o objeto chamador do método, 
+	   // portanto ele não é nulo
+        
+        return c; 
     }
 }
