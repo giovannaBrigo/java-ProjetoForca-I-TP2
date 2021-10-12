@@ -8,13 +8,14 @@ public class Tracinhos implements Cloneable
 		// instancia this.texto com um vetor com tamanho igual qtd.
 		// preenche this.texto com underlines (_).
 		// --> gi
-		if(qtd < 0)
+		
+		if(qtd <= 0)
 		    throw new Exception ("Quantidade inválida!(?)");
 		    
-		this.texto[] = new char[qtd]; // buguei (ou tipo this.texto[] = new texto[qtd];(?))
+		this.texto = new char[qtd]; // buguei (ou tipo this.texto[] = new texto[qtd];(?))
 		
-		for(int i = 0; i <= qtd; i++)
-		this.texto[i] = "_"; // talvez(?)
+		for(int i = 0; i <= qtd; i++) // < qtd ou <= qtd
+			this.texto[i] = '_';
     }
 
     public void revele (int posicao, char letra) throws Exception
@@ -25,8 +26,8 @@ public class Tracinhos implements Cloneable
 		// do vetor this.texto
 		// --> gi
 		
-		if (posicao < 0) || (posicao >= this.texto.length)
-		    throw new Exception ("Quantidade inválida!(?)");
+		if ((posicao < 0) || (posicao >= this.texto.length))
+		    throw new Exception ("Posição inválida!");
 		    
 	    this.texto[posicao] = letra;
     }
@@ -39,6 +40,13 @@ public class Tracinhos implements Cloneable
         // caso ainda reste algum underline, ou false caso
         // contrario
         
+        for (int i = 2; i < this.texto.length - 1; i++)
+        {
+			if (this.texto[i] == '_')
+				return true;
+		}      
+		
+		return false;  
     }
 
     public String toString ()
@@ -48,10 +56,10 @@ public class Tracinhos implements Cloneable
         // branco
         // --> gi
         
-        string aux = "";
+        String aux = "";
         
-        for(int i = 0; i < this.texto.length(); i++)
-        aux = this.texto[i] + " "; // talvez? não sei
+        for(int i = 0; i < this.texto.length; i++)
+			aux += this.texto[i] + " "; // talvez? não sei
         
         return aux;
     }
@@ -64,9 +72,12 @@ public class Tracinhos implements Cloneable
         
         if(this.texto == obj)
             return true;
-        else
-            return false;
+            
+        // ver do professor
+            
+        return false;
     }
+    
     @Override
     public int hashCode ()
     {
@@ -74,8 +85,8 @@ public class Tracinhos implements Cloneable
         
         int ret = 5;
         
-//if (this.texto != null) ?->seria impossível ele ser nulo?. Se possível, retornaria ret?
-// gi--> não existe null em tipo primitivo, então nem precisa verificar
+		//if (this.texto != null) ?->seria impossível ele ser nulo?. Se possível, retornaria ret?
+		// gi--> não existe null em tipo primitivo, então nem precisa verificar
 
 		ret = 5*ret + new String(this.texto).hashCode(); // como é tipo primitivo, 
 		                                                // temos q transformar em obj
@@ -106,8 +117,16 @@ public class Tracinhos implements Cloneable
         // retornar uma copia de this
         // --> gi
         
-        Object copia = new Tracinhos(this.texto); // object ou char ou tracinhos?
+        Object copia=null;
+        
+        try
+        {
+			copia = new Tracinhos(this); // object ou char ou tracinhos?
+		}
+		catch (Exception erro)
+		{}
         
         return copia;
     }
 }
+
