@@ -50,6 +50,14 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+	//--> dany
+    
+        int ret = super.hashcode();         // herda???
+        
+        ret = 7 * ret + new Byte (this.letrasJaDigitadas).hashCode();
+        
+        if(ret<0) ret = -ret // se for negativo, transformamos em positivo
+        return ret;
     }
 
     public ControladorDeLetrasJaDigitadas(
