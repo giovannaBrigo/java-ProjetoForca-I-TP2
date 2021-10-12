@@ -64,7 +64,13 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
     throws Exception // construtor de cópia
     {
-        // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
+        // copiar c.letrasJaDigitadas em this.
+	//dany
+    
+        if(controladorDeLetrasJaDigitadas == null)
+        throw new Exception("Modelo Ausente");
+
+        this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }
 
     public Object clone ()
