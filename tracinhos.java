@@ -15,7 +15,7 @@ public class Tracinhos implements Cloneable
 		if(qtd <= 0)
 		    throw new Exception ("Tracinhos inválidos");
 		    
-		this.texto = new char[qtd]; // buguei (ou tipo this.texto[] = new texto[qtd];(?))
+		this.texto = new char[qtd];
 		
 		for (int i = 0; i < qtd; i++)
 			this.texto[i] = '_';
@@ -31,7 +31,7 @@ public class Tracinhos implements Cloneable
 		if ((posicao < 0) || (posicao >= this.texto.length))
 		    throw new Exception ("Posição inválida!");
 		    
-	    this.texto[posicao] = letra;
+	    this.texto[posicao] = Character.toUpperCase(letra);
     }
 
     public boolean isAindaComTracinhos ()
@@ -61,7 +61,7 @@ public class Tracinhos implements Cloneable
         String strTodos = "";
         
         for(int i = 0; i < this.texto.length; i++)
-			strTodos += this.texto[i] + " "; // talvez? não sei
+			strTodos += this.texto[i] + " ";
         
         return strTodos;
     }
@@ -76,7 +76,7 @@ public class Tracinhos implements Cloneable
    
         if (obj==null) return false;
 
-        if (obj.getClass() != Tracinhos.getClass()) return false;
+        if (obj.getClass() != Tracinhos.class) return false;
 
         Tracinhos tracinhos = (Tracinhos)obj;
 
@@ -112,7 +112,7 @@ public class Tracinhos implements Cloneable
         
         this.texto = new char[t.texto.length];
         
-        for (int i = 0; i < t.texto.length - 1; i++)
+        for (int i = 0; i < t.texto.length; i++)
         {
 			this.texto[i] = t.texto[i];
 		}
@@ -126,7 +126,7 @@ public class Tracinhos implements Cloneable
         
         try
         {
-			copia = new Tracinhos(this); // object ou char ou tracinhos?
+			copia = new Tracinhos(this);
 		}
 		catch (Exception erro)
 		{}
