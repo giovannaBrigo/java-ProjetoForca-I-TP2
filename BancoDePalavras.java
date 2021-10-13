@@ -1,3 +1,7 @@
+// Danyelle Nogueira França 21232
+// Julia Flausino da Silva  21241
+// Giovanna do Amaral Brigo 21685
+
 public class BancoDePalavras
 {
     private static String[] palavras = 
