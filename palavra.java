@@ -71,7 +71,7 @@ public class Palavra implements Comparable<Palavra>
         return this.texto;
     }
 
-    public boolean equals (Object obj)
+    public boolean equals (Object obj) // ????????????????????????????
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
@@ -79,7 +79,7 @@ public class Palavra implements Comparable<Palavra>
         if (obj == null) return false;
 			
 		if (this == obj) return true;
-        
+									      // && obj.getClass() != String.class
         if (obj.getClass() != Palavra.class) return false;
         
         Palavra p = (Palavra) obj; // revelação, pois temos certeza de que é uma Palavra
@@ -89,20 +89,21 @@ public class Palavra implements Comparable<Palavra>
 			
 		return true;			
     }
-    @Override
-    public int hashCode ()
+
+    public int hashCode () // ?????????????????????????????????????????
     {
         // calcular e retornar o hashcode de this
         // --> gi 
-        
-        int ret = super.hashcode(); // parece q tá herdando
-        // int ret = 75; --> se não estivesse herdando (será?)
-        
-        // g--> se for um objeto 
-        if(this.dia!= null) // (?)testamos se o obj é null (lá em cima já teve uma verificação)
+		int ret = 5;
+
+        // if(this.dia!= null) 
+        // (?)testamos se o obj é null (lá em cima já teve uma verificação)
+
         ret = 5 * ret + this.texto.hashCode();
-        
-         if(ret<0) ret = -ret // se for negativo, transformamos em positivo
+
+        if(ret<0) ret = -ret; // se for negativo, transformamos em positivo
+
+        return ret;
     }
 
     public int compareTo (Palavra palavra)
@@ -110,4 +111,3 @@ public class Palavra implements Comparable<Palavra>
         return this.texto.compareTo(palavra.texto);
     }
 }
-
