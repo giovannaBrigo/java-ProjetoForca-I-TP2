@@ -17,7 +17,7 @@ public class Tracinhos implements Cloneable
 		    
 		this.texto = new char[qtd]; // buguei (ou tipo this.texto[] = new texto[qtd];(?))
 		
-		for(int i = 0; i <= qtd; i++) // < qtd ou <= qtd
+		for (int i = 0; i < qtd; i++)
 			this.texto[i] = '_';
     }
 
