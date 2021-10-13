@@ -67,17 +67,25 @@ public class Tracinhos implements Cloneable
     }
 
     @Override
-    public boolean equals (Object obj) // !!!
+    public boolean equals (Object obj)
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
         
-        if(this.texto == obj)
-            return true;
-            
-        // ver do professor !!!
-            
-        return false;
+		if (this==obj) return true;
+   
+        if (obj==null) return false;
+
+        if (obj.getClass() != Tracinhos.getClass()) return false;
+
+        Tracinhos tracinhos = (Tracinhos)obj;
+
+		for(int i = 0; i < this.texto.length; i++)
+		{
+			if (tracinhos.texto[i] != this.texto[i])
+			return false;
+		}
+        return true;
     }
     
     @Override
@@ -86,8 +94,7 @@ public class Tracinhos implements Cloneable
         // calcular e retornar o hashcode de this
         
         int ret = 5;
-	
-                // ret = 5*ret this.texto.hashCode(); (?)
+        
 		ret = 5*ret + new String(this.texto).hashCode(); 
         
         if(ret < 0) ret = - ret;
