@@ -1,3 +1,7 @@
+// Danyelle Nogueira França 21232
+// Julia Flausino da Silva  21241
+// Giovanna do Amaral Brigo 21685
+
 public class ControladorDeErros implements Cloneable
 {
     private int qtdMax, qtdErr=0;
@@ -37,14 +41,13 @@ public class ControladorDeErros implements Cloneable
 		return false;
     }
 
-    @Override
     public String toString ()
     {
         return this.qtdErr + "/" + this.qtdMax;
     }
 
 	@Override
-    public boolean equals (Object obj) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public boolean equals (Object obj) // DÚVIDA
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
@@ -52,7 +55,9 @@ public class ControladorDeErros implements Cloneable
         if (obj == null) return false;
 			
 		if (this == obj) return true;
-		
+		/* 
+		   DUVIDA: comparação de classes?, c.qtdMax e c.qtdErr dá erro
+		*/
 		if (obj.getClass() != ControladorDeErros.class) return false;
         
         // revelação, pois temos certeza de que é um ControladorDeErros
@@ -68,13 +73,15 @@ public class ControladorDeErros implements Cloneable
     }
 
 	@Override
-    public int hashCode () // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public int hashCode () // DÚVIDA
     {
         // calcular e retornar o hashcode de this
-        // --> gi 
         
 		int ret = 5;
-		
+		 /* 
+		    DÚVIDA: essa disgrama abaixo não funciona
+		 */
+		 
         ret = 5 * ret + new Integer (this.qtdMax).hashCode();
         ret = 5 * ret + new Integer (this.qtdErr).hashCode();
 
