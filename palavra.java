@@ -1,3 +1,7 @@
+// Danyelle Nogueira França 21232
+// Julia Flausino da Silva  21241
+// Giovanna do Amaral Brigo 21685
+
 public class Palavra implements Comparable<Palavra>
 {
     private String texto;
@@ -66,17 +70,22 @@ public class Palavra implements Comparable<Palavra>
         return this.texto.length();
     }
 
-    @Override
     public String toString ()
     {
         return this.texto;
     }
 
     @Override
-    public boolean equals (Object obj) // ????????????????????????????
+    public boolean equals (Object obj) // DUVIDA
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        
+        /* 
+           DÚVIDA: equals está dando erro, tem a necessidade de 
+           verificação usando o getClass()? 
+           Object para Palavra 
+        */
         
         if (obj == null) return false;
 			
@@ -93,10 +102,14 @@ public class Palavra implements Comparable<Palavra>
     }
 
     @Override
-    public int hashCode () // ?????????????????????????????????????????
+    public int hashCode () // DUVIDA
     {
         // calcular e retornar o hashcode de this
-        // --> gi 
+		
+		/*
+		  DUVIDA: hashCode com erro ou n tem erro mais, n lembro ;) 
+		*/
+		
 		int ret = 5;
 
         // if(this.dia!= null) 
@@ -109,7 +122,6 @@ public class Palavra implements Comparable<Palavra>
         return ret;
     }
 
-    @Override
     public int compareTo (Palavra palavra)
     {
         return this.texto.compareTo(palavra.texto);
