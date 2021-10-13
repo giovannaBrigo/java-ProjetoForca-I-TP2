@@ -13,7 +13,7 @@ public class Tracinhos implements Cloneable
 		// preenche this.texto com underlines (_).
 		
 		if(qtd <= 0)
-		    throw new Exception ("Tracinhos inválidos");
+		    throw new Exception ("Quantidade de tracinhos inválida!");
 		    
 		this.texto = new char[qtd];
 		
