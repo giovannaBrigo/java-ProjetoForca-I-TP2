@@ -2,15 +2,14 @@ public class Teste
 {
     public static void main (String[] args)
     {
-		////////////////////////////////
+	////////////////////////////////
         // TESTES DA CLASSE TRACINHOS //
         ////////////////////////////////
         
         System.out.println ("Testes da classe Tracinhos");
         System.out.println (" ");
         
-        System.out.println ("Testes do Construtor");
-        
+	// TESTES CONSTRUTOR 
         // TESTE 1
         Tracinhos t1 = null;
         try 
@@ -60,7 +59,8 @@ public class Teste
 		{
 			System.err.println (erro.getMessage());
 		}
-		
+	    
+		// TESTES REVELE E TO STRING
 		// TESTE 5
 		try
 		{
@@ -113,6 +113,7 @@ public class Teste
 			System.err.println (erro.getMessage());
 		}
 		
+	        // TESTES IS AINDA COM TRACINHOS
 		// TESTE 9
 		System.out.println ("TESTE 9");
 		System.out.println ("Eh " + t4.isAindaComTracinhos() + " que t4 ainda esta com tracinhos.");
@@ -257,7 +258,7 @@ public class Teste
 			System.err.println (erro.getMessage());
 		}
 		
-		// TESTES DE CLONE
+		// TESTES DE CLONE - FALTA OS TESTE DE CLONE!!!!!!!!!
 		// TESTE 23
 		/*
 		System.out.println("TESTE 23");
