@@ -22,12 +22,14 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 		// concatena a letra fornecida a this.letrasJaDigitadas.
     }
 
+    @Override
     public String toString ()
     {
 		// retorna um String com TODAS as letras presentes em
 		// this.letrasJaDigitadas separadas por vírgula (,).
     }
 
+    @Override
     public boolean equals (Object obj)
     {
 	// verificar se this e obj são iguais
@@ -47,6 +49,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         return true;
     }
 
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
