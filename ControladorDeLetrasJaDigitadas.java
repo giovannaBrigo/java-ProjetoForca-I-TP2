@@ -83,5 +83,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public Object clone ()
     {
         // criar uma cópia do this com o construtor de cópia e retornar
+	//dany
+
+        ControladorDeLetrasJaDigitadas  copia = new ControladorDeLetrasJaDigitadas (letrasJaDigitadas);
+                  //ou
+        ControladorDeLetrasJaDigitadas copia = (ControladorDeLetrasJaDigitadas)letrasJaDigitadas.clone();
+       
+        return copia;
     }
 }
