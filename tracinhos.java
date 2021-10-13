@@ -1,3 +1,7 @@
+// Danyelle Nogueira França 21232
+// Julia Flausino da Silva  21241
+// Giovanna do Amaral Brigo 21685
+
 public class Tracinhos implements Cloneable
 {
     private char texto [];
@@ -7,10 +11,9 @@ public class Tracinhos implements Cloneable
 		// verifica se qtd não é positiva, lançando uma exceção.
 		// instancia this.texto com um vetor com tamanho igual qtd.
 		// preenche this.texto com underlines (_).
-		// --> gi
 		
 		if(qtd <= 0)
-		    throw new Exception ("Quantidade inválida!(?)");
+		    throw new Exception ("Tracinhos inválidos");
 		    
 		this.texto = new char[qtd]; // buguei (ou tipo this.texto[] = new texto[qtd];(?))
 		
@@ -24,7 +27,6 @@ public class Tracinhos implements Cloneable
 		// do que this.texto.length, lançando uma exceção.
 		// armazena a letra fornecida na posicao tambem fornecida
 		// do vetor this.texto
-		// --> gi
 		
 		if ((posicao < 0) || (posicao >= this.texto.length))
 		    throw new Exception ("Posição inválida!");
@@ -55,14 +57,13 @@ public class Tracinhos implements Cloneable
         // retorna um String com TODOS os caracteres que há
         // no vetor this.texto, intercalados com espaços em
         // branco
-        // --> gi
         
-        String aux = "";
+        String strTodos = "";
         
         for(int i = 0; i < this.texto.length; i++)
-			aux += this.texto[i] + " "; // talvez? não sei
+			strTodos += this.texto[i] + " "; // talvez? não sei
         
-        return aux;
+        return strTodos;
     }
 
     @Override
@@ -70,7 +71,6 @@ public class Tracinhos implements Cloneable
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
-        // --> gi
         
         if(this.texto == obj)
             return true;
@@ -87,11 +87,7 @@ public class Tracinhos implements Cloneable
         
         int ret = 5;
         
-		//if (this.texto != null) ?->seria impossível ele ser nulo?. Se possível, retornaria ret?
-		// gi--> não existe null em tipo primitivo, então nem precisa verificar
-
-		ret = 5*ret + new String(this.texto).hashCode(); // como é tipo primitivo, 
-		                                                // temos q transformar em obj
+		ret = 5*ret + new String(this.texto).hashCode(); 
         
         if(ret < 0) ret = - ret;
         
@@ -117,7 +113,6 @@ public class Tracinhos implements Cloneable
     public Object clone ()
     {
         // retornar uma copia de this
-        // --> gi
         
         Object copia=null;
         
@@ -131,4 +126,3 @@ public class Tracinhos implements Cloneable
         return copia;
     }
 }
-
