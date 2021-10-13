@@ -258,15 +258,14 @@ public class Teste
 			System.err.println (erro.getMessage());
 		}
 		
-		// TESTES DE CLONE - FALTA OS TESTE DE CLONE!!!!!!!!!
+	        // TESTE DE CLONE
 		// TESTE 23
-		/*
+		
 		System.out.println("TESTE 23");
 		Tracinhos t10 = null;
-		t10 = t4.clone();
-		System.out.println("O vetor de t4 está assim : " + t4.toString());S
-		System.out.println("O vetor de t10 está assim: " + t10.toString());
-		*/
+		t10 = (Tracinhos) t4.clone();
+		System.out.println("O vetor de t4 esta assim : " + t4.toString());
+		System.out.println("O vetor de t10 esta assim: " + t10.toString(
         
         ///////////////////////////////////////////
         // TESTES DA CLASSE CONTROLADOR DE ERROS //
