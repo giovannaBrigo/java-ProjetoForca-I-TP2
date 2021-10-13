@@ -41,6 +41,7 @@ public class ControladorDeErros implements Cloneable
 		return false;
     }
 
+    @Override
     public String toString ()
     {
         return this.qtdErr + "/" + this.qtdMax;
