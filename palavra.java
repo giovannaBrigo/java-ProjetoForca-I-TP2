@@ -123,6 +123,7 @@ public class Palavra implements Comparable<Palavra>
         return ret;
     }
 
+    @Override
     public int compareTo (Palavra palavra)
     {
         return this.texto.compareTo(palavra.texto);
