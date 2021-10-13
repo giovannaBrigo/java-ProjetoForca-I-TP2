@@ -10,7 +10,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     {
         // torna this.letrasJaDigitadas igual ao String vazio
 	
-        String this.letrasJaDigitadas = "";   
+         this.letrasJaDigitadas = "";   
     }
 
     public boolean isJaDigitada (char letra)
