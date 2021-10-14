@@ -265,14 +265,6 @@ public class Teste
 		Tracinhos t10 = null;
 		t10 = (Tracinhos) t4.clone();
 		System.out.println("O vetor de t4 esta assim : " + t4.toString());
-		System.out.println("O vetor de t10 esta assim: " + t10.toString(
-        
-        ///////////////////////////////////////////
-        // TESTES DA CLASSE CONTROLADOR DE ERROS //
-        ///////////////////////////////////////////
-        
-        /////////////////////////////////////////////////////////
-        // TESTES DA CLASSE CONTROLADOR DE LETRAS JA DIGITADAS //
-        /////////////////////////////////////////////////////////
+		System.out.println("O vetor de t10 esta assim: " + t10.toString());
     }
 }
