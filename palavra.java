@@ -82,16 +82,10 @@ public class Palavra implements Comparable<Palavra>
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
         
-        /* 
-           DÚVIDA: equals está dando erro, tem a necessidade de 
-           verificação usando o getClass()? 
-           Object para Palavra 
-        */
-        
         if (obj == null) return false;
 			
 		if (this == obj) return true;
-									      // && obj.getClass() != String.class
+									    
         if (obj.getClass() != Palavra.class) return false;
         
         Palavra p = (Palavra) obj; // revelação, pois temos certeza de que é uma Palavra
@@ -105,16 +99,7 @@ public class Palavra implements Comparable<Palavra>
     @Override
     public int hashCode () // DUVIDA
     {
-        // calcular e retornar o hashcode de this
-		
-		/*
-		  DUVIDA: hashCode com erro ou n tem erro mais, n lembro ;) 
-		*/
-		
-		int ret = 5;
-
-        // if(this.dia!= null) 
-        // (?)testamos se o obj é null (lá em cima já teve uma verificação)
+	int ret = 5;
 
         ret = 5 * ret + this.texto.hashCode();
 
