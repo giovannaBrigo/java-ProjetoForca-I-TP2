@@ -19,9 +19,9 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // possui a letra fornecida, retornando true em caso afirmativo
         // ou false em caso negativo
 
-       for(int i = 0; i < this.letrasJaDigitadas.length; i++)
+       for(int i = 0; i < this.letrasJaDigitadas.length(); i++)
        {
-           if(letrasJaDigitadas.substring(i,i++) == letra)
+           if(letrasJaDigitadas.charAt(i) == letra)
            {
                return true;
            }
@@ -50,8 +50,8 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 
         String strTodas = " ";
 
-        for(int i = 0; i < this.letrasJaDigitadas.length; i++)
-            strTodas += this.letrasJaDigitadas.substring(i,i++) + ", "; 
+        for(int i = 0; i < this.letrasJaDigitadas.length(); i++)
+            strTodas += this.letrasJaDigitadas.charAt(i) + ", "; 
 
         return strTodas;
     }
@@ -61,16 +61,22 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     {
 	// verificar se this e obj são iguais
 	
-	if (this==obj) return true;
+	    if (this==obj) return true;
+	    
+	    System.out.println ("1");
    
         if (obj==null) return false;
+        
+        System.out.println ("2");
 
-        if (obj.getClass() != ControladorDeLetrasJaDigitadas.getClass()) return false;
+        if (obj.getClass() != ControladorDeLetrasJaDigitadas.class) return false;
+        System.out.println ("3");
 
         ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas = (ControladorDeLetrasJaDigitadas)obj; //??
 
-        if (controladorDeLetrasJaDigitadas.letrasJaDigitadas != this.letrasJaDigitadas)
+        if (!controladorDeLetrasJaDigitadas.letrasJaDigitadas.equals(this.letrasJaDigitadas))
 			return false;
+		System.out.println ("4");
 
         return true;
     }
@@ -84,7 +90,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         
         ret = 7 * ret + new String(this.letrasJaDigitadas).hashCode();
         
-        if(ret<0) ret = -ret // se for negativo, transformamos em positivo
+        if(ret<0) ret = -ret; // se for negativo, transformamos em positivo
         return ret;
     }
 
@@ -108,7 +114,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         
         try
         {
-		copia = new ControladorDeLetrasJaDigitadas(this);
+		copia = new ControladorDeLetrasJaDigitadas(this); // object ou char ou tracinhos?
 		}
 		catch (Exception erro) // ignorando exception porque sabemos que não vai ocorrer, já que passamos this como parâmetro do construtor 
 		                         // de cópia e this é o objeto chamante do método clone
