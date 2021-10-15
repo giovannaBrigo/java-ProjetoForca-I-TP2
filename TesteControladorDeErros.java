@@ -142,8 +142,5 @@ classe TesteControladorDeErros
 		{
 			System.err.println ("");
 		}
-		
-		
-      
     }
 }
