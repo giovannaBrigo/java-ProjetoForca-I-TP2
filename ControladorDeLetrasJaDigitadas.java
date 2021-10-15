@@ -108,7 +108,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         
         try
         {
-		copia = new ControladorDeLetrasJaDigitadas(this); // object ou char ou tracinhos?
+		copia = new ControladorDeLetrasJaDigitadas(this);
 		}
 		catch (Exception erro) // ignorando exception porque sabemos que não vai ocorrer, já que passamos this como parâmetro do construtor 
 		                         // de cópia e this é o objeto chamante do método clone
