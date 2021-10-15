@@ -48,18 +48,16 @@ public class ControladorDeErros implements Cloneable
     }
 
 	@Override
-    public boolean equals (Object obj) // DÚVIDA
+    public boolean equals (Object obj) 
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
         
         if (obj == null) return false;
 			
-		if (this == obj) return true;
-		/* 
-		   DUVIDA: comparação de classes?, c.qtdMax e c.qtdErr dá erro
-		*/
-		if (obj.getClass() != ControladorDeErros.class) return false;
+	if (this == obj) return true;
+		
+	if (obj.getClass() != ControladorDeErros.class) return false;
         
         // revelação, pois temos certeza de que é um ControladorDeErros
         ControladorDeErros c = (ControladorDeErros) obj; 
@@ -74,17 +72,15 @@ public class ControladorDeErros implements Cloneable
     }
 
 	@Override
-    public int hashCode () // DÚVIDA
+    public int hashCode () 
     {
         // calcular e retornar o hashcode de this
         
-		int ret = 5;
-		 /* 
-		    DÚVIDA: essa disgrama abaixo não funciona
-		 */
+	int ret = 5;
+		
 		 
-        ret = 5 * ret + new Integer (this.qtdMax).hashCode();
-        ret = 5 * ret + new Integer (this.qtdErr).hashCode();
+        ret = 5 * ret + Integer.valueOf(this.qtdMax).hashCode();
+        ret = 5 * ret + Integer.valueOf(this.qtdErr).hashCode();
 
         if(ret<0) ret = -ret; // se for negativo, transformamos em positivo
 
