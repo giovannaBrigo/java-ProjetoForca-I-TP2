@@ -3,7 +3,6 @@ public class TesteTracinhos
     public static void main (String[] args)
     {
         System.out.println ("TESTES DA CLASSE TRACINHOS");
-        System.out.println (" ");
         
 	// TESTES CONSTRUTOR 
         // TESTE 1
