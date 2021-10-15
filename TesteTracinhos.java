@@ -1,12 +1,8 @@
-public class Teste
+public class TesteTracinhos
 {
     public static void main (String[] args)
     {
-	////////////////////////////////
-        // TESTES DA CLASSE TRACINHOS //
-        ////////////////////////////////
-        
-        System.out.println ("Testes da classe Tracinhos");
+        System.out.println ("TESTES DA CLASSE TRACINHOS");
         System.out.println (" ");
         
 	// TESTES CONSTRUTOR 
