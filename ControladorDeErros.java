@@ -13,7 +13,7 @@ public class ControladorDeErros implements Cloneable
 		// armazena qtdMax fornecida em this.qtdMax.
 		
 		if (qtdMax <= 0)
-			throw new Exception ("Quantidade inválida!");
+			throw new Exception ("Quantidade invalida!");
 		
 		this.qtdMax = qtdMax;
     }
@@ -25,7 +25,7 @@ public class ControladorDeErros implements Cloneable
         // incrementando this.qtdErr em caso negativo
         
         if (this.qtdErr == this.qtdMax)
-			throw new Exception ("A quantidade máxima de erros já foi atingida!");
+			throw new Exception ("A quantidade maxima de erros já foi atingida!");
 		
 		this.qtdErr++;
     }
@@ -92,7 +92,7 @@ public class ControladorDeErros implements Cloneable
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
         
         if (c==null)
-			throw new Exception ("O objeto passado como parâmetro é nulo!");
+			throw new Exception ("O objeto passado como parametro eh nulo!");
 			
 		this.qtdMax = c.qtdMax;
 		this.qtdErr = c.qtdErr;        
